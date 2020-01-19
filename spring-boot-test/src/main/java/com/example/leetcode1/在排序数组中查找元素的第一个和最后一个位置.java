@@ -15,7 +15,7 @@ public class 在排序数组中查找元素的第一个和最后一个位置 {
 //        System.out.println(res);
 //        System.out.println(res2);
 //        System.out.println(res3);
-        int res4 = new 在排序数组中查找元素的第一个和最后一个位置().binarySearch(arr,0,arr.length-1,5);
+        int res4 = new 在排序数组中查找元素的第一个和最后一个位置().binarySearch(arr,0,arr.length-1,9);
         System.out.println(res4);
 
     }
@@ -85,11 +85,7 @@ public class 在排序数组中查找元素的第一个和最后一个位置 {
      */
     private int binarySearch(int[] nums, int start, int end,int target) {
 
-        int mid = (start + end)/2;
-
-        if(nums[mid] == target){
-            return mid;
-        }
+        int mid =0;
 
         while (start <= end){
             mid = (start + end)/2;

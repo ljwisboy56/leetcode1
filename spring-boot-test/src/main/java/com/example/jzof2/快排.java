@@ -1,28 +1,16 @@
 package com.example.jzof2;
 
-import java.util.ArrayList;
-
 /**
  * @author yingru.ljw
- * @date 2019-12-29 14:33
+ * @date 2020-01-10 00:24
  */
-public class 找出最小的k个数 {
+public class 快排 {
 
-    ArrayList<Integer> integers = new ArrayList<>();
+    public static void main(String[] args) {
+        int[] arr =new int[]{2,13,23,22,17,17,5};
+        int[] res = new 快排().quickSort(arr);
+        System.out.println(res);
 
-    public ArrayList<Integer> GetLeastNumbers_Solution(int [] input, int k) {
-
-        if(input == null || input.length == 0 || k > input.length){
-            return integers;
-        }
-
-        int[] res = quickSort(input);
-
-        for (int i = 0; i < k;i ++){
-            integers.add(res[i]);
-        }
-
-        return integers;
 
     }
 
@@ -53,12 +41,12 @@ public class 找出最小的k个数 {
         while (start < end){
             if(start < end && input[start] <= pivotValue){
                 start++;
-                swap(input,start,end);
             }
+            swap(input,start,end);
             if(start < end && input[end] >= pivotValue){
                 end--;
-                swap(input,start,end);
             }
+            swap(input,start,end);
         }
         return end;
     }
@@ -68,4 +56,5 @@ public class 找出最小的k个数 {
         arr[i] = arr[j];
         arr[j] = tmp;
     }
+
 }
