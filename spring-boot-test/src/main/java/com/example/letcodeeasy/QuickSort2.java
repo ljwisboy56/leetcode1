@@ -37,8 +37,7 @@ public class QuickSort2 {
 
     //  选择一个枢轴值(关键字) 把它放到某个位置 使其左边的值都比它小 右边的值都比它大
     public int partition0(int[] L,int low,int high) {
-        int pivotkey;
-        pivotkey=L[low];
+        int pivotkey=L[low];
         //顺序很重要，要先从右边找
         while(low<high) {
             while(low<high && L[high]>=pivotkey) {  //从后往前找到比key小的放到前面去

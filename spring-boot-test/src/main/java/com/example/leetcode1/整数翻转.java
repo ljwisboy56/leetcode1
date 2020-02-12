@@ -9,10 +9,10 @@ import com.example.order.In;
 public class 整数翻转 {
 
     public static void main(String[] args) {
-        String x = "-012";
+        String x = "1534236469";
         Integer v = Integer.valueOf(x);
 //        System.out.println(v);
-        int res = new 整数翻转().reverse(-120);
+        int res = new 整数翻转().reverse(1534236469);
         System.out.println(res);
 
 

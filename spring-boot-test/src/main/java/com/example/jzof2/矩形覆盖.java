@@ -8,6 +8,7 @@ public class 矩形覆盖 {
 
     //dp[i]=dp[i-1]+dp[i-2]
     public int RectCover(int target) {
+
         if(target == 0){
             return 0;
         }

@@ -6,12 +6,13 @@ package com.example.leetcode1;
  */
 public class 颜色分类 {
 
-    public void sortColors(int[] nums) {
+    public void sortColors(int[] nums) {    
+
         int left = 0;
 
-        int right = nums.length-1;
-
         int cur =0;
+
+        int right = nums.length-1;
 
         while (cur <= right){
             if(nums[cur] == 0){
@@ -22,11 +23,10 @@ public class 颜色分类 {
             else if (nums[cur] == 2){
                 swap(nums,cur,right);
                 right--;
-            }else {
+            }else if(nums[cur] == 1){
                 cur++;
             }
         }
-
     }
 
     private void swap(int[] arr,int a,int b){

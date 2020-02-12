@@ -9,6 +9,13 @@ import java.util.Map;
  */
 public class 罗马数字转整数 {
 
+    public static void main(String[] args) {
+        int res = new 罗马数字转整数().romanToInt("IV");
+
+        System.out.println(res);
+
+    }
+
 
     static Map<Character, Integer> map = new HashMap<>();
     static {

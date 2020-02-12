@@ -51,7 +51,7 @@ public class 找出最小的k个数 {
         int pivotValue = input[end];
 
         while (start < end){
-            if(start < end && input[start] <= pivotValue){
+            if(input[start] <= pivotValue){
                 start++;
                 swap(input,start,end);
             }

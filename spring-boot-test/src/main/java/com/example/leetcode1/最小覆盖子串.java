@@ -45,7 +45,7 @@ public class 最小覆盖子串 {
             //拷贝出窗口数组
             String tmpStr = s.substring(left,right);
             if(window(tmpStr)){
-                if(res.equals("")){
+                if("".equals(res)){
                     res = tmpStr;
                 }else if(tmpStr.length() < res.length()){
                     res = tmpStr;

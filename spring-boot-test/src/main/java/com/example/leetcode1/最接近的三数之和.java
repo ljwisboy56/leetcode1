@@ -9,7 +9,7 @@ import java.util.Arrays;
 public class 最接近的三数之和 {
 
     public static void main(String[] args) {
-        int res = new 最接近的三数之和().threeSumClosest(new int[]{-3,-2,-5,3,-4},0);
+        int res = new 最接近的三数之和().threeSumClosest(new int[]{-3,-2,-5,3,-4},-1);
         System.out.println(res);
     }
 
@@ -20,7 +20,7 @@ public class 最接近的三数之和 {
             return 0;
         }
 
-        int close = Integer.MAX_VALUE;
+        int close = 10000;
 
         int len = nums.length;
 

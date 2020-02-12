@@ -3,6 +3,7 @@ package com.example.jzof;
 import com.example.order.In;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.function.Consumer;
 
 /**
@@ -11,8 +12,7 @@ import java.util.function.Consumer;
  */
 public class quanpailie {
 
-
-    static int[] array = new int[]{1,2,3};
+    static int[] array = new int[]{1,3,4,2};
 
     static ArrayList<ArrayList<Integer>> list = new ArrayList<>();
 
@@ -20,23 +20,16 @@ public class quanpailie {
 
     public static void main(String[] args) {
 
-        quanpailie(0);
-
+        Arrays.sort(array);
+        new quanpailie().quanpailie2(0,array);
         list.forEach(System.out::println);
-
+        System.out.println(list.size());
     }
 
     /**
-     *
      * 肯定是回溯，然后呢用的是排列树
-     *
-     *
-     *
-     *
      */
     public static void quanpailie(int t){
-
-
         if(t >= array.length){
             curList = new ArrayList();
             for(int  tmp : array){
@@ -54,11 +47,41 @@ public class quanpailie {
 
     }
 
+
+    /**
+     * 排列树用我自己这个实现，这个是比较好的
+     * @param t
+     * @param array
+     */
+    public void quanpailie2(int t,int[] array){
+        if(t >= array.length-1){
+            ArrayList<Integer> tmpList = new ArrayList<>();
+            for(int  tmp : array){
+                tmpList.add(tmp);
+            }
+            list.add(tmpList);
+        }else {
+            for(int i = t;i< array.length;i++){
+                if(list.size()==5){
+                    System.out.println(1);
+                }
+                swap(array,t,i);
+                //加一层排序就变成了有序
+                quanpailie2(t+1,array);
+                swap(array,t,i);
+            }
+
+        }
+
+    }
+
+
     private static void swap(int[] array, int t, int i) {
         int tmp = array[i];
         array[i] = array[t];
         array[t] = tmp;
     }
+
 
 
 }

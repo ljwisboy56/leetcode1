@@ -11,7 +11,6 @@ public class BinarySearch {
 
         return doBinarySearch(arr,target,0,arr.length-1);
 
-
     }
 
     /**
@@ -24,7 +23,7 @@ public class BinarySearch {
      */
     private int doBinarySearch(int[] arr, int target, int left, int right) {
 
-        if(arr[left] > target || arr[right] < target || arr == null){
+        if(arr[left] > target || arr[right] < target){
             return -1;
         }
 

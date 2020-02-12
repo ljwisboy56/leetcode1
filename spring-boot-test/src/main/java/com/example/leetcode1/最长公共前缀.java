@@ -64,7 +64,7 @@ public class 最长公共前缀 {
             }
         }
 
-        StringBuffer stringBuffer = new StringBuffer();
+        StringBuilder stringBuffer = new StringBuilder();
         for (Character character : tmp){
             stringBuffer.append(character);
         }

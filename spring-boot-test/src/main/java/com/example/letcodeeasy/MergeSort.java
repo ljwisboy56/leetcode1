@@ -9,10 +9,7 @@ import java.util.Arrays;
 public class MergeSort {
 
     public static void main(String[] args) {
-        int[] arr = new int[]{
-                23,24,43,13,11,2,3,4,3
-        };
-
+        int[] arr = new int[]{23,24,43,13,11,2,3,4,3};
         sort(arr);
         Arrays.stream(arr).forEach(System.out::println);
     }
@@ -37,8 +34,6 @@ public class MergeSort {
         int p1 = L;
 
         int p2 = mid +1;
-
-
 
         while (p1 <= mid && p2 <= R ){
             int tmp = arr[p1] < arr[p2] ? arr[p1++] : arr[p2++];
