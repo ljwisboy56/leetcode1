@@ -30,16 +30,27 @@ public class 二叉树的最大深度 {
 
     public int maxDepth(TreeNode root) {
 
+        //countHigh(root);
         doFind(1,root);
 
         return res;
+    }
+
+    private int countHigh(TreeNode root) {
+
+        if(root == null){
+            return 0;
+        }
+
+        return Math.max(countHigh(root.left),countHigh(root.right))+1;
+
+
     }
 
     private void doFind(int n, TreeNode root) {
 
         if(root == null){
             res = Math.max(res,n-1);
-            return;
         }else {
             doFind(n+1,root.left);
             doFind(n+1,root.right);
