@@ -1,7 +1,6 @@
-package com.example.ioc;
+package com.example.alibba.ioc;
 
 import org.springframework.beans.factory.InitializingBean;
-import org.springframework.beans.factory.config.BeanPostProcessor;
 
 import javax.annotation.PostConstruct;
 

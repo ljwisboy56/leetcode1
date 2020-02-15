@@ -1,7 +1,7 @@
 package com.example.springboottest.com.example.service;
 
-import com.example.ioc.Car;
-import com.example.ioc.MainConfig;
+import com.example.alibba.ioc.Car;
+import com.example.alibba.ioc.MainConfig;
 
 import org.junit.Test;
 import org.springframework.context.ApplicationContext;

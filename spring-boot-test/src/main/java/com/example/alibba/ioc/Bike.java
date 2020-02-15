@@ -1,4 +1,4 @@
-package com.example.ioc;
+package com.example.alibba.ioc;
 
 /**
  * @author lijiawen

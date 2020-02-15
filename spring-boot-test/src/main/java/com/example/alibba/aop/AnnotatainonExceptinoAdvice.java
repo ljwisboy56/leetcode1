@@ -1,4 +1,4 @@
-package com.example.aop;
+package com.example.alibba.aop;
 
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.Around;
@@ -13,7 +13,7 @@ import org.springframework.stereotype.Component;
 @Component
 public class AnnotatainonExceptinoAdvice {
 
-    @Around("@annotation(com.example.aop.ExceptionAnnotation)")
+    @Around("@annotation(com.example.alibba.aop.ExceptionAnnotation)")
     public Object around(ProceedingJoinPoint point) throws Throwable {
         Object[] args = point.getArgs();
         System.out.println("yes i am aop");

@@ -1,10 +1,8 @@
-package com.example.aop;
+package com.example.alibba.aop;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.EnableAspectJAutoProxy;
-
-import java.nio.channels.Channel;
 
 /**
  * @author lijiawen

@@ -1,7 +1,5 @@
 package com.example.springboottest.newaop;
 
-import com.example.aop.ExceptionCatch;
-import com.example.aop.MainfConfigAop;
 import com.example.newaop.Want;
 
 import org.junit.Test;

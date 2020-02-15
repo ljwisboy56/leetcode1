@@ -1,4 +1,4 @@
-package com.example.ioc;
+package com.example.alibba.ioc;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

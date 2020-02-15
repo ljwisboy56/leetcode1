@@ -1,15 +1,13 @@
 package com.example.springboottest.com.example.service;
 
-import com.example.aop.ExceptionCatch;
-import com.example.aop.MainfConfigAop;
+import com.example.alibba.aop.ExceptionCatch;
+import com.example.alibba.aop.MainfConfigAop;
 
 import org.junit.Test;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.locks.ReentrantLock;
-
-import javax.annotation.Resource;
 
 /**
  * @author lijiawen

@@ -1,4 +1,4 @@
-package com.example.aop;
+package com.example.alibba.aop;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
@@ -7,10 +7,12 @@ import java.lang.annotation.Target;
 
 /**
  * @author lijiawen
- * @date 2019/2/16 下午8:19
+ * @date 2019/2/21 上午12:09
  */
 @Retention(RetentionPolicy.RUNTIME)
 @Target(ElementType.METHOD)
-public @interface ExceptionAnnotation {
+public @interface OutAdvice {
+
+
 
 }
