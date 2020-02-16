@@ -1,7 +1,6 @@
 package com.example.leetcode1;
 
 import com.example.letcodeeasy.ListNode;
-import com.example.order.In;
 
 /**
  * @author yingru.ljw

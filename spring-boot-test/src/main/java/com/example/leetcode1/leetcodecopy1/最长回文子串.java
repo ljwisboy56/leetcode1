@@ -5,12 +5,11 @@ package com.example.leetcode1.leetcodecopy1;
  * @date 2020-01-19 22:40
  */
 public class 最长回文子串 {
-
     public static void main(String[] args) {
 
         String a = "babad";
         String res = new 最长回文子串().longestPalindrome(a);
-        System.out.println(a.substring(1,3+1));
+        System.out.println(res);
 
     }
 
@@ -39,6 +38,7 @@ public class 最长回文子串 {
 
         int fe = 1;
 
+        //先判断一下2个数的场景
         for (int i = 0; i < len; i++) {
             dp[i][i] = 1;
             if (i < len - 1) {
@@ -50,6 +50,7 @@ public class 最长回文子串 {
             }
         }
 
+        //然后再处理3个数的场景
         for (int l = 3; l <= len; l++) {
             for (int i = 0; i + l - 1 < len; i++) {
                 //终点坐标

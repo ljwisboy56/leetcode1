@@ -1,6 +1,5 @@
 package com.example.leetcode1.leetcodecopy1;
 
-import com.example.order.In;
 
 /**
  * @author yingru.ljw

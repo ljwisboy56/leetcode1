@@ -45,7 +45,7 @@ public class 快速排序 {
             swap(arr,left,right);
         }
 
-        return right;
+        return left;
     }
 
     private static void swap(int[] arr,int i,int j){
