@@ -1,37 +1,28 @@
-package com.example.leetcode1;
+package com.example.leetcode2;
 
 /**
  * @author yingru.ljw
- * @date 2020-01-09 20:16
+ * @date 2020-02-17 15:27
  */
-public class 编辑距离 {
+public class 相隔为1的编辑距离 {
 
     public static void main(String[] args) {
 
-        String a = "ab";
-        String b = "abc";
-
-        int res = new 编辑距离().minDistance(a, b);
+        boolean res = new 相隔为1的编辑距离().isOneEditDistance("ab","abc");
         System.out.println(res);
 
     }
 
     /**
-     * if s1[i] == s2[j]:
-     * 啥都别做（skip）
-     * i, j 同时向前移动
-     * else:
-     * 三选一：
-     * 插入（insert）
-     * 删除（delete）
-     * 替换（replace）
-     * <p>
-     * 作者：labuladong
-     * 链接：https://leetcode-cn.com/problems/edit-distance/solution/bian-ji-ju-chi-mian-shi-ti-xiang-jie-by-labuladong/
-     * 来源：力扣（LeetCode）
-     * 著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。
+     * if(s(i) == t(j)){
+     *     continue;
+     * }else{
+     *     min(
+     *     增、删、改
+     *     )
+     * }
      */
-    public int minDistance(String word1, String word2) {
+    public boolean isOneEditDistance(String word1, String word2) {
 
         int m = word1.length();
 
@@ -58,13 +49,11 @@ public class 编辑距离 {
         }
 
         int res = dp[m][n];
-        return dp[m][n];
-
+        return dp[m][n] == 1;
     }
 
     private int min(int a,int b,int c){
         return Math.min(Math.min(a,b),c);
     }
-
 
 }

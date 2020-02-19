@@ -23,15 +23,19 @@ public class 乘积最大子序列 {
             return 0;
         }
 
-        int[] dp = new int[nums.length];
+        int[] dp_max = new int[nums.length];
+        int[] dp_min = new int[nums.length];
 
-        dp[0] = nums[0];
+        dp_max[0] = nums[0];
+        dp_min[0] = nums[0];
 
-        int max = dp[0];
+        int max = dp_max[0];
 
         for (int i = 1;i < nums.length;i++){
-            dp[i] = Math.max(dp[i-1]*nums[i],nums[i]);
-            max = Math.max(max,dp[i]);
+            dp_max[i] = Math.max((Math.max(dp_min[i-1] * nums[i],dp_max[i-1]*nums[i])),nums[i]);
+            dp_min[i] = Math.min((Math.min(dp_min[i-1] * nums[i],dp_max[i-1]*nums[i])),nums[i]);
+
+            max =Math.max(dp_max[i],max);
         }
 
         return max;

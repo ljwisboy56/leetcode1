@@ -6,6 +6,13 @@ package com.example.jzof.jzof2;
  */
 public class 二进制数中1的个数 {
 
+    public static void main(String[] args) {
+        int a = 4;
+        a>>>=4;
+        String rs = Integer.toBinaryString(a);
+        System.out.println(rs);
+    }
+
     /**
      *
      * >>：带符号右移。正数右移高位补0，负数右移高位补1。比如：

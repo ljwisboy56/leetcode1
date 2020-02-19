@@ -19,7 +19,7 @@ public class 买卖股票的最佳时机3 {
      * dp[i][2][0] = dp[i-1][2][0] , dp[i-1][2][1] + preices[i];
      * dp[i][2][1] = dp[i-1][2][1] , dp[i-1][1][0] - preices[i];
      * dp[-1][2][0] = dp[i][0][0] = 0;
-     * dp[-1][2][1] = dp[i][0][1] = -负无穷
+     * dp[-1][2][1] = dp[i][0][1] = -负无穷;
      *
      */
     public int maxProfit(int[] prices) {

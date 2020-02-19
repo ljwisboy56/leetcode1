@@ -42,8 +42,7 @@ public class 计数排序 {
         //每个桶的下标索引标志的是值，然而数组的值标志的是重复元素的个数
         //其实和bitmap思想是一样的
         for (int value : arr) {
-            int index = value - min;
-            buckets[index]++;
+            buckets[value - min]++;
         }
 
         int k=0;
