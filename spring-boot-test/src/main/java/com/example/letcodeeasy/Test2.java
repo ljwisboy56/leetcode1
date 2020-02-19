@@ -1,6 +1,5 @@
 package com.example.letcodeeasy;
 
-import com.example.springboottest.Student;
 
 import java.util.ArrayList;
 import java.util.List;

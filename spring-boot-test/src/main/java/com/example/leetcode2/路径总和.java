@@ -42,7 +42,6 @@ public class 路径总和 {
                     return true;
                 }
             }
-            count -= root.val;
         }
         return false;
 
