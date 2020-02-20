@@ -46,40 +46,21 @@ public class 填充每个节点的下一个右侧节点指针 {
 
         Queue<Node> queue1 = new LinkedBlockingQueue<>();
 
-        Queue<Node> queue2 = new LinkedBlockingQueue<>();
-
         queue1.add(root);
 
-        while (!queue1.isEmpty() || !queue2.isEmpty()){
-            List<Node> list = new ArrayList<>();
-            if(!queue1.isEmpty()){
-                while (!queue1.isEmpty()){
-                    Node cur = queue1.poll();
-                    list.add(cur);
-                    if(cur.left != null){
-                        queue2.add(cur.left);
-                    }
-                    if(cur.right != null){
-                        queue2.add(cur.right);
-                    }
+        while (!queue1.isEmpty()){
+            int size = queue1.size();
+            for (int i = 0; i < size; i++) {
+                Node cur = queue1.poll();
+                if(i < size-1){
+                    cur.next = queue1.peek();
                 }
-            }else {
-                while (!queue2.isEmpty()){
-                    Node cur = queue2.poll();
-                    list.add(cur);
-                    if(cur.left != null){
-                        queue1.add(cur.left);
-                    }
-                    if(cur.right != null){
-                        queue1.add(cur.right);
-                    }
+                if(cur.left != null){
+                    queue1.add(cur.left);
                 }
-            }
-
-            Node cur = list.get(0);
-            for (int i =1; i < list.size();i++){
-                cur.next = list.get(i);
-                cur = cur.next;
+                if(cur.right != null){
+                    queue1.add(cur.right);
+                }
             }
         }
         return root;

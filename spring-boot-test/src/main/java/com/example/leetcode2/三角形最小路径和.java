@@ -88,9 +88,11 @@ public class 三角形最小路径和 {
                 //最左边的一定是
                 if(j == 0){
                     dp[i][j] = dp[i-1][j] + triangle.get(i).get(j);
-                }else if(j == triangle.get(i).size()-1){
+                }
+                else if(j == triangle.get(i).size()-1){
                     dp[i][j] = dp[i-1][j-1] + triangle.get(i).get(j);
-                }else {
+                }
+                else {
                     dp[i][j] = Math.min(dp[i-1][j-1],dp[i-1][j]) + triangle.get(i).get(j);
                 }
             }

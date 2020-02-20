@@ -30,10 +30,13 @@ public class 买卖股票的最佳时机3 {
 
         int n = prices.length;
 
-        int[][][] dp = new int[n][2][2];
+        /**
+         * 为什么k=3
+         */
+        int[][][] dp = new int[n][3][2];
 
         for (int i = 0; i < n; i++) {
-            for (int k = 2; k >=1 ; k--){
+            for (int k = 0; k <=2 ; k++){
                 if (i - 1 == -1) {
                     /* 处理 base case */
                     dp[i][k][0] = 0;
