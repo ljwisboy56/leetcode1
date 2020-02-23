@@ -13,8 +13,6 @@ public class 至多包含两个不同字符的最长子串 {
 
 
     public int lengthOfLongestSubstringTwoDistinct(String s) {
-
-
         if(s == null || "".equals(s)){
             return 0;
         }
@@ -32,11 +30,10 @@ public class 至多包含两个不同字符的最长子串 {
 
         while (right < len){
             //拿到当前元素
-            Character cur = s.charAt(right);
             //这步操作就可能把2个不同元素变为3个，这个时候就要更新坐标了。
-            if(hashMap.size() <= 2){
+            if(hashMap.size() < 3){
                 //更新相同元素的最右位置，这样一步可以跳过多个值
-                hashMap.put(cur,right);
+                hashMap.put(s.charAt(right),right);
                 right++;
             }
             //更新的逻辑：我们先找到所有坐标里面做小的，那么他一定是最左坐标然后删除调这个key移动他前面

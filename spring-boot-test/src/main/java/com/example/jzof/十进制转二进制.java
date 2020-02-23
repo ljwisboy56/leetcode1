@@ -24,8 +24,9 @@ public class 十进制转二进制 {
      */
     public static String binaryToDecimal(int n) {
         int res = 0;
-        for (int i = n, step = 1; i > 0; i /= 2, step *= 10) {
+        for (int i = n, step = 1; i > 0;i /= 2, step *= 10) {
             res += i % 2 * step;
+
         }
         return String.valueOf(res);
     }

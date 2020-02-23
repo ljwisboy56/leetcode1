@@ -47,7 +47,9 @@ public class 克隆图 {
         System.out.println(root);
     }
 
-
+    /**
+     * 节点--克隆节点
+     */
     HashMap<Node,Node> map = new HashMap<>();
 
     public Node cloneGraph(Node node) {
@@ -73,17 +75,18 @@ public class 克隆图 {
             //拿出第一个元素
             Node cur = queue.poll();
             for (Node tmp : cur.neighbors){
+                //拿到copy头节点的无向边，将tmp集合其加进去
                 if(!map.containsKey(tmp)){
                     Node copy = new Node(tmp.val,new ArrayList<>());
                     //建立源结点-copy之间的关系
                     map.put(tmp,copy);
                     queue.add(tmp);
                 }
-                //拿到copy头节点的无向边，将tmp集合其加进去
-                List<Node> list  = map.get(cur).neighbors;
+                //拿到当前的节点的克隆节点的边
+                List<Node> list = map.get(cur).neighbors;
+                //把当前节边的克隆节点加进去
                 list.add(map.get(tmp));
             }
-
         }
 
         return copyCur;

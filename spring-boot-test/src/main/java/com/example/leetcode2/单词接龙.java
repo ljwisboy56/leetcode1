@@ -38,7 +38,6 @@ public class 单词接龙 {
                     if(visited[i]){
                         continue;
                     }
-
                     String cur = wordList.get(i);
                     if(check(cur,tmp)){
                         if(cur.equals(endWord)){

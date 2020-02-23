@@ -23,19 +23,19 @@ public class 缺失的区间 {
         List<String> res = new ArrayList<>();
         // 记录左边界指针
         long left = lower;
-        for(int i=0;i<nums.length;i++){
-            if(left+1==nums[i]){
+        for (int num : nums) {
+            if (left + 1 == num) {
                 res.add(String.valueOf(left));
-            }else if(left+1<nums[i]){
-                res.add(String.valueOf(left)+"->"+String.valueOf(nums[i]-1));
+            } else if (left + 1 < num) {
+                res.add(left + "->" + (num - 1));
             }
-            left = (long)nums[i]+1;
+            left = (long) num + 1;
         }
         // 最后与upper比较
         if(left==upper) {
             res.add(String.valueOf(left));
         }else if(left<upper){
-            res.add(String.valueOf(left)+"->"+String.valueOf(upper));
+            res.add(left +"->"+ upper);
         }
         return res;
     }

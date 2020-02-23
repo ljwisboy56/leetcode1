@@ -107,11 +107,10 @@ public class LRUCache {
         DLinkedQueue pre = node.pre;
         DLinkedQueue next = node.next;
 
-        pre.next = node.next;
+        pre.next = next;
         next.pre = pre;
 
     }
-
 
     private void moveToHead(DLinkedQueue node){
         //先删除这个节点

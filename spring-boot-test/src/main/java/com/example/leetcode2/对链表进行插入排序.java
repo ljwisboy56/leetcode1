@@ -60,16 +60,14 @@ public class 对链表进行插入排序 {
             ListNode next = cur.next;
 
             if(next != null && next.val < cur.val){
-                while (pre != null && pre.next != null && pre.next.val < next.val){
+                while (pre.next != null && pre.next.val < next.val){
                     pre = pre.next;
                 }
-
                 ListNode tmp = pre.next;
                 pre.next = next;
                 cur.next = next.next;
                 next.next = tmp;
                 pre = dummy;
-
             }else {
                 cur = next;
             }

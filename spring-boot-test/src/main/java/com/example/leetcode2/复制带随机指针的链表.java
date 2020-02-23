@@ -60,13 +60,14 @@ public class 复制带随机指针的链表 {
         head = copy;
 
         Node dummy = new Node(-1);
-        Node copyDummy = dummy;
+        dummy.next = head.next;
         while (head != null && head.next != null) {
-            dummy.next = head.next;
+            Node clone = head.next;
+            head.next = clone.next;
+            clone.next = clone.next == null ? null : clone.next.next;
             head = head.next.next;
-            dummy = dummy.next;
         }
-        return copyDummy.next;
+        return dummy.next;
     }
 
 

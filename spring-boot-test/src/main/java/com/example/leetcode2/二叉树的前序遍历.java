@@ -82,7 +82,10 @@ public class 二叉树的前序遍历 {
             }
 
             if (!queue.isEmpty()){
-                root = queue.pop().right;
+                TreeNode cur = queue.pop();
+                if(cur.right != null){
+                    root = cur.right;
+                }
             }
         }
 
