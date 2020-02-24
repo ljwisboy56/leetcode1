@@ -10,34 +10,38 @@ import java.util.List;
  */
 public class 重复的DNA序列 {
 
+    /**
+     * 题目的意思是编写一个函数来查找子串，这个子串长度为10，在原字符串中出现超过一次。
+     * @param s
+     * @return
+     */
     public List<String> findRepeatedDnaSequences(String s) {
 
-        /**
-         *  Set visited = new HashSet(), res = new HashSet();
-         *         for (int i = 0; i + 10 <= s.length(); i++) {
-         *             String tmp = s.substring(i, i + 10);
-         *             if (visited.contains(tmp)) {
-         *                 res.add(tmp);
-         *             } else visited.add(tmp);
-         *
-         *
-         *         }
-         *         return new ArrayList<>(res);
-         *
-         */
+//        HashSet<String> set = new HashSet<>();
+//        HashSet<String> visited = new HashSet<>();
+//
+//        for (int i =0; i + 10 < s.length();i++){
+//            String tmp = s.substring(i,i+10);
+//            if(visited.contains(tmp)){
+//               set.add(tmp);
+//            }else {
+//                visited.add(tmp);
+//            }
+//        }
+
 
         HashSet<String> set = new HashSet<>();
         HashSet<String> visited = new HashSet<>();
-
         for (int i =0; i + 10 < s.length();i++){
             String tmp = s.substring(i,i+10);
             if(visited.contains(tmp)){
-               set.add(tmp);
+                set.add(tmp);
             }else {
                 visited.add(tmp);
             }
-        }
+            set.add(tmp);
 
+        }
         return new ArrayList<>(set);
     }
 
