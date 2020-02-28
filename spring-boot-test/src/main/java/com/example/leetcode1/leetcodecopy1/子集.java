@@ -20,19 +20,37 @@ public class 子集 {
     List<Integer> list = new ArrayList<>();
 
     public List<List<Integer>> subsets(int[] nums) {
-
-        this.doFind2(0, nums);
-
+        backtrack(0, nums, new ArrayList<>());
         return allList;
 
     }
 
+    private void backtrack(int n, int[] nums, ArrayList<Integer> tmp) {
+        if(n > nums.length){
+            return;
+        }else {
+            allList.add(new ArrayList<>(tmp));
+            for (int i = n; i < nums.length; i++) {
+                tmp.add(nums[i]);
+                backtrack(i + 1, nums, tmp);
+                tmp.remove(tmp.size() - 1);
+            }
+
+        }
+
+    }
+
+
     private void doFind2(int n, int[] nums) {
-        allList.add(new ArrayList<>(list));
-        for (int i = n; i < nums.length; i++) {
-            list.add(nums[i]);
-            doFind2(i + 1, nums);
-            list.remove(list.size() - 1);
+        if(n >= nums.length){
+            return;
+        }else {
+            for (int i = n; i < nums.length; i++) {
+                allList.add(new ArrayList<>(list));
+                list.add(nums[i]);
+                doFind2(i + 1, nums);
+                list.remove(list.size() - 1);
+            }
         }
     }
 

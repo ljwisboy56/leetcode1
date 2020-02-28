@@ -30,7 +30,6 @@ public class MinStack {
             Node node = new Node(x,Math.min(x,head.min));
             node.next = head;
             head = node;
-            head.min = Math.min(head.min,x);
         }
 
 

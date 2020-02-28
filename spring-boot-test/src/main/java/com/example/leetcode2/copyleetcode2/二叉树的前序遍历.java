@@ -64,9 +64,7 @@ public class 二叉树的前序遍历 {
 
             if(!stack.isEmpty()){
                 TreeNode cur = stack.pop();
-                if(cur.right != null){
-                    root = cur.right;
-                }
+                root = cur.right;
             }
         }
 

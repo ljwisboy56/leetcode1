@@ -1,7 +1,6 @@
 package com.example.leetcode2.copyleetcode2;
 
 import com.example.letcodeeasy.ListNode;
-
 import java.util.HashSet;
 
 /**

@@ -41,25 +41,25 @@ public class 二叉树的中序遍历 {
 
     }
 
-    private void doFindByStack(TreeNode treeNode){
+    private List<Integer> doFindByStack(TreeNode treeNode){
+        List<Integer> list = new ArrayList<>();
 
         Stack<TreeNode> stack = new Stack<>();
 
         while (treeNode != null || !stack.isEmpty()){
             while (treeNode != null){
-                stack.push(treeNode.left);
+                stack.push(treeNode);
                 treeNode = treeNode.left;
             }
-
-
             if(!stack.isEmpty()){
                 TreeNode node = stack.pop();
                 list.add(node.val);
                 treeNode = node.right;
             }
-
         }
+        return list;
 
     }
+
 
 }
