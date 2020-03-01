@@ -18,7 +18,6 @@ public class 合并区间 {
             this.start = start;
             this.end = end;
         }
-
     }
 
     /**
@@ -63,11 +62,7 @@ public class 合并区间 {
             res[i][0] = list.get(i).start;
             res[i][1] = list.get(i).end;
         }
-
         return res;
-
     }
-
-
 
 }

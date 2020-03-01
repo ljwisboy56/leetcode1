@@ -8,22 +8,38 @@ import com.example.letcodeeasy.TreeNode;
  */
 public class 统计同值子树 {
 
-    public int countUnivalSubtrees(TreeNode root) {
+    int count = 0;
 
-        if(root == null){
+    boolean is_uni(TreeNode node) {
+
+        if (node.left == null && node.right == null) {
+            count++;
+            return true;
+        }
+
+        boolean is_unival = true;
+
+        if (node.left != null) {
+            is_unival = is_uni(node.left) && is_unival && node.left.val == node.val;
+        }
+
+        if (node.right != null) {
+            is_unival = is_uni(node.right) && is_unival && node.right.val == node.val;
+        }
+
+        if (!is_unival) {
+            return false;
+        }
+        count++;
+        return true;
+    }
+    public int countUnivalSubtrees(TreeNode root) {
+        if (root == null) {
             return 0;
         }
-
-        int left = countUnivalSubtrees(root.left);
-
-        int right = countUnivalSubtrees(root.right);
-
-        if(left == right){
-            return left + right +1;
-        }else {
-            return left + right;
-        }
-
+        is_uni(root);
+        return count;
     }
+
 
 }

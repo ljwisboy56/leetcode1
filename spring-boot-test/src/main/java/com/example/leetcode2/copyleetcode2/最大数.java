@@ -18,12 +18,7 @@ public class 最大数 {
         for (int i = 0; i < nums.length; i++) {
             asStrs[i] = String.valueOf(nums[i]);
         }
-        Arrays.sort(asStrs, new Comparator<String>() {
-            @Override
-            public int compare(String o1, String o2) {
-                return o2.compareTo(o1);
-            }
-        });
+        Arrays.sort(asStrs, Comparator.reverseOrder());
 
         System.out.println(Arrays.toString(asStrs));
 

@@ -38,37 +38,19 @@ public class 合并区间 {
             list.add(new Interval(arr[0],arr[1]));
         }
 
-        Collections.sort(list, new Comparator<Interval>() {
-            @Override
-            public int compare(Interval o1, Interval o2) {
-                if(o1.start < o2.start){
-                    return -1;
-                }else if(o1.start == o2.start){
-                    return 0;
-                }else {
-                    return 1;
-                }
-            }
-        });
+        list.sort(Comparator.comparingInt(o -> o.start));
 
         Stack<Interval> stack = new Stack<>();
         stack.push(list.get(0));
 
         for (Interval cur :list){
             Interval tmp = stack.pop();
-            int tmpStart = tmp.start;
-            int tmpEnd  = tmp.end;
-
-            int curStart = cur.start;
-            int curEnd = cur.end;
-
-            if(curStart <= tmpEnd){
-                Interval n1 = new Interval(tmpStart,Math.max(tmpEnd,curEnd));
+            if(tmp.end >= cur.start) {
+                Interval n1 = new Interval(tmp.start,Math.max(tmp.end,cur.end));
                 stack.push(n1);
             }else {
                 stack.push(cur);
                 res.add(tmp);
-
             }
         }
 
