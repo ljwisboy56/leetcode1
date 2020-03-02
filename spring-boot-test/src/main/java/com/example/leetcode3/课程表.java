@@ -10,6 +10,12 @@ import java.util.Queue;
  */
 public class 课程表 {
 
+    public static void main(String[] args) {
+        boolean res= new com.example.leetcode3.课程表().canFinish(3,new int[][]{{1,0}});
+        System.out.println(res);
+
+    }
+
 
     public boolean canFinish(int numCourses, int[][] prerequisites) {
         if (numCourses <= 0) {

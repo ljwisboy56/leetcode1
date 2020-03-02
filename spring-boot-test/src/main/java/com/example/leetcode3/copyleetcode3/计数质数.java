@@ -1,15 +1,17 @@
-package com.example.leetcode3;
+package com.example.leetcode3.copyleetcode3;
+
+import sun.jvm.hotspot.debugger.Page;
 
 /**
  * @author yingru.ljw
- * @date 2020-02-26 13:14
+ * @date 2020-03-02 16:28
  */
 public class 计数质数 {
 
     public static void main(String[] args) {
+        int res = new 计数质数().countPrimes(10);
+//        System.out.println(res);
 
-        int res = new 计数质数().countPrimes(2);
-        System.out.println(res);
 
     }
 
@@ -47,4 +49,5 @@ public class 计数质数 {
         return true;
 
     }
+
 }

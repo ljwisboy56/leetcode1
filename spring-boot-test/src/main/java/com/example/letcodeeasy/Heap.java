@@ -11,7 +11,13 @@ public class Heap {
     public static void main(String[] args) {
 
 
-        int [] aa = new int[]{6501,6828,6963,7036,7422,7674,8146,8468,8704,8717,9170,9359,9719,9895,9896,9913,9962,154,293,334,492,1323,1479,1539,1727,1870,1943,2383,2392,2996,3282,3812,3903,4465,4605,4665,4772,4828,5142,5437,5448,5668,5706,5725,6300,6335};
+        int [] aa = new int[]{6501,6828,6963,
+                7036,7422,7674,8146,8468,
+                8704,8717,9170,9359,9719,9895,
+                9896,9913,9962,154,293,334,492,1323,
+                1479,1539,1727,1870,1943,2383,2392,2996,3282,
+                3812,3903,4465,4605,4665,4772,4828,5142,5437,
+                5448,5668,5706,5725,6300,6335};
         heapSort(aa);
 
         Arrays.stream(aa).forEach(System.out::println);
@@ -52,7 +58,6 @@ public class Heap {
      */
     private static void heapfiy(int[] arr, int currentNode, int size) {
 
-
         //左子树数组坐标
         int left = 2 * currentNode +1;
         //右子数位置坐标
@@ -61,16 +66,12 @@ public class Heap {
         int max = currentNode;
 
         //叶子节点不能大于数组最大值
-        if(left < size){
-            if(arr[left] > arr[max]){
-                max = left;
-            }
+        if(left < size && arr[left] > arr[max]){
+            max = left;
         }
 
-        if(right < size){
-            if(arr[right] > arr[max]){
-                max = right;
-            }
+        if(right < size && arr[right] > arr[max]){
+            max = right;
         }
 
         //这步非常重要，当我们找到了比当前节点还大的子节点，那么就要把当前

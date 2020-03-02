@@ -6,61 +6,62 @@ package com.example.leetcode3;
  */
 public class Trie {
 
-    TreeNode root;
+    public static void main(String[] args) {
+        Trie trie = new Trie();
+        trie.insert("apple");
+        System.out.println(trie.search("apple"));
+        System.out.println(trie.search("app"));
+        trie.insert("app");
+        System.out.println(trie.search("app"));
 
-    class TreeNode{
-
-        boolean isString;
-        TreeNode[] childs;
-        public TreeNode(){
-            this.childs = new TreeNode[26];
-            this.isString = false;
-        }
 
     }
 
-    /** Initialize your data structure here. */
+    Trie root = null;
+
+    private boolean is_string = false;
+
+    private Trie childs[] = new Trie[26];
+
     public Trie() {
-        root = new TreeNode();
+        root = new Trie();
     }
 
-    /** Inserts a word into the trie. */
-    public void insert(String word) {
-        TreeNode cur = root;
-        for (int i = 0; i < word.length(); i++) {
-            int index =(int)(word.charAt(i) - 'a');
-            if(cur.childs[index] == null){
-                cur.childs[index] = new TreeNode();
-                cur = cur.childs[index];
+
+    public void insert(String word) {//插入单词
+        Trie cur = root;
+        char w[] = word.toCharArray();
+        for (int i = 0; i < w.length; ++i) {
+            if (cur.childs[w[i] - 'a'] == null) {
+                cur.childs[w[i] - 'a'] = new Trie();
             }
+            cur = cur.childs[w[i] - 'a'];
         }
-        cur.isString = true;
+        cur.is_string = true;
     }
 
-    /** Returns if the word is in the trie. */
-    public boolean search(String word) {
-        TreeNode node = find(word);
-        return node != null && node.isString;
-    }
-
-    private TreeNode find(String word) {
-        TreeNode cur = root;
-        for (int i = 0; i < word.length(); i++) {
-            int index = (int) (word.charAt(i)- 'a');
-            if(cur.childs[index] == null){
-                return null;
+    public boolean search(String word) {//查找单词
+        Trie cur = root;
+        char w[] = word.toCharArray();
+        for (int i = 0; i < w.length; ++i) {
+            if (cur.childs[w[i] - 'a'] == null) {
+                return false;
             }
-            cur = cur.childs[index];
+            cur = cur.childs[w[i] - 'a'];
         }
-        return cur;
-
+        return cur.is_string;
     }
 
-    /** Returns if there is any word in the trie that starts with the given prefix. */
-    public boolean startsWith(String prefix) {
-        TreeNode node = find(prefix);
-        return node != null;
+    public boolean startsWith(String prefix) {//查找前缀
+        Trie cur = root;
+        char p[] = prefix.toCharArray();
+        for (int i = 0; i < p.length; ++i) {
+            if (cur.childs[p[i] - 'a'] == null) {
+                return false;
+            }
+            cur = cur.childs[p[i] - 'a'];
+        }
+        return true;
     }
-
 
 }
