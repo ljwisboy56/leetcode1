@@ -44,10 +44,8 @@ public class 跳跃游戏2 {
                 if(i+n >= nums.length-1){
                     return true;
                 }
-                if(nums[i+n] != 0){
-                    if(doCanJump(n + i,nums)){
-                        return true;
-                    }
+                if(nums[i+n] != 0 && doCanJump(n+i,nums)){
+                    return true;
                 }
                 map.put(i+n,Boolean.FALSE);
             }

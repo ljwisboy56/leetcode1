@@ -26,7 +26,6 @@ public class 最长回文子串 {
             return "";
         }
 
-
         int len = s.length();
 
         int[][] dp = new int[len][len];
