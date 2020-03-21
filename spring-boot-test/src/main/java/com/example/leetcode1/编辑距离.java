@@ -39,7 +39,7 @@ public class 编辑距离 {
 
         int[][] dp = new int[m+1][n+1];
 
-        for (int  i= 1; i <=m;i++){
+        for (int i= 1; i <=m;i++){
             dp[i][0] =  i;
         }
 
@@ -57,7 +57,6 @@ public class 编辑距离 {
             }
         }
 
-        int res = dp[m][n];
         return dp[m][n];
 
     }

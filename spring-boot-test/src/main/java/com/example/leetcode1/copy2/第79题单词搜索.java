@@ -1,12 +1,10 @@
-package com.example.leetcode1.leetcodecopy1;
+package com.example.leetcode1.copy2;
 
-public class 单词搜索 {
-
-    public static void main(String[] args) {
-        char[][] chars = {{'a'}};
-        System.out.println(new 单词搜索().exist(chars,"a"));
-
-    }
+/**
+ * @author yingru.ljw
+ * @date 2020-03-21 22:15
+ */
+public class 第79题单词搜索 {
 
     private boolean[][] marked;
 
@@ -70,6 +68,4 @@ public class 单词搜索 {
     private boolean inArea(int x, int y) {
         return x >= 0 && x < m && y >= 0 && y < n;
     }
-
 }
-

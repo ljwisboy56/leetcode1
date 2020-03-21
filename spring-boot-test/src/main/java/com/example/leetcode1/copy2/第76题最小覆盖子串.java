@@ -1,21 +1,22 @@
-package com.example.leetcode1.leetcodecopy1;
+package com.example.leetcode1.copy2;
 
 import java.util.HashMap;
+import java.util.HashSet;
 
 /**
  * @author yingru.ljw
- * @date 2020-02-08 23:19
+ * @date 2020-03-21 16:24
  */
-public class 最小覆盖子串 {
+public class 第76题最小覆盖子串 {
 
     public static void main(String[] args) {
-        String res = new 最小覆盖子串().minWindow("ADOBECODEBANC","ABC");
+        String s = "ADOBECODEBANC";
+        String t = "ABC";
 
+        String res = new 第76题最小覆盖子串().minWindow(s,t);
         System.out.println(res);
+
     }
-
-
-
 
     public String minWindow(String s, String t) {
 
