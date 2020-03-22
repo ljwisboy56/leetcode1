@@ -21,7 +21,7 @@ public class 不同的二叉搜索树2 {
     }
 
     private List<TreeNode> getAns(int start, int end) {
-        List<TreeNode> ans = new ArrayList<TreeNode>();
+        List<TreeNode> ans = new ArrayList<>();
         //此时没有数字，将 null 加入结果中
         if (start > end) {
             ans.add(null);
