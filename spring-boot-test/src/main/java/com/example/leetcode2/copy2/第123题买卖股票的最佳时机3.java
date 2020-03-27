@@ -1,10 +1,10 @@
-package com.example.leetcode2.copyleetcode2;
+package com.example.leetcode2.copy2;
 
 /**
  * @author yingru.ljw
- * @date 2020-02-20 18:26
+ * @date 2020-03-25 14:01
  */
-public class 买卖股票的最佳时机3 {
+public class 第123题买卖股票的最佳时机3 {
 
     /**
      * dp[-1][k][0] = dp[i][0][0] = 0;
@@ -17,11 +17,6 @@ public class 买卖股票的最佳时机3 {
      * dp[i][2][0] = dp[i-1][2][0],dp[i-1][2][1] + preices[i];
      * dp[i][2][1] = dp[i-1][2][1],0 - preices[i];
      *
-     * dp[i][0] = dp[i-1][0],dp[i-1][1] + preices[i];
-     * dp[i][1] = dp[i-1][1],- preices[i];
-     *
-     * @param prices
-     * @return
      */
     public int maxProfit(int[] prices) {
         if(prices == null || prices.length ==0){
@@ -38,12 +33,13 @@ public class 买卖股票的最佳时机3 {
                     /* 处理 base case */
                     dp[i][k][0] = 0;
                     dp[i][k][1] = -prices[i];
-                    continue;
+                }else {
+                    dp[i][k][0] = Math.max(dp[i-1][k][0],dp[i-1][k][1] + prices[i]);
+                    dp[i][k][1] = Math.max(dp[i-1][k][1],dp[i-1][k-1][0] - prices[i]);
                 }
-                dp[i][k][0] = Math.max(dp[i-1][k][0],dp[i-1][k][1] + prices[i]);
-                dp[i][k][1] = Math.max(dp[i-1][k][1],dp[i-1][k-1][0] - prices[i]);
             }
         }
         return dp[n-1][2][0];
     }
+
 }

@@ -20,7 +20,7 @@ public class 单词拆分2 {
         wordDict.add("sand");
         wordDict.add("dog");
 
-        List<String> res = new 单词拆分2().wordBreak2("catsanddog",wordDict);
+        List<String> res = new 单词拆分2().wordBreak("catsanddog",wordDict);
         System.out.println(res);
     }
 

@@ -6,10 +6,8 @@ package com.example.leetcode2.copyleetcode2;
  */
 public class 被围绕的区域 {
 
-
     public void solve(char[][] board) {
-
-        if(board == null || board.length == 0){
+        if(board == null || board.length ==0){
             return;
         }
 
@@ -17,40 +15,42 @@ public class 被围绕的区域 {
             for (int j = 0; j < board[0].length; j++) {
                 boolean isEdge = i == 0 || j == 0 || i == board.length - 1 || j == board[0].length - 1;
                 if(isEdge && board[i][j] == 'O'){
-                    dfs(board,i,j);
+                    dfs(i,j,board);
                 }
             }
         }
 
         for (int i = 0; i < board.length; i++) {
             for (int j = 0; j < board[0].length; j++) {
-                if(board[i][j] == '#'){
-                    board[i][j] = 'O';
-                }
                 if(board[i][j] == 'O'){
                     board[i][j] = 'X';
                 }
+                else if(board[i][j]=='#'){
+                    board[i][j]='O';
 
+                }
             }
 
         }
-
     }
 
-    private void dfs(char[][] board, int i, int j) {
-        if(i < 0 || j < 0 || i >= board.length || j >= board[0].length){
-           return;
+    private void dfs(int i, int j, char[][] board) {
+
+        if(i <0 || j <0 || i >= board.length || j >= board[0].length){
+            return;
         }else {
-            //说明他是和边界相连的点，将其置位#,表示这些是不能被变换的
-            if(board[i][j] != 'X' && board[i][j] != '#'){
+            if(board[i][j] != 'X' && board[i][j] !='#'){
                 board[i][j] = '#';
-                dfs(board,i+1,j);
-                dfs(board,i-1,j);
-                dfs(board,i,j+1);
-                dfs(board,i,j-1);
+                //向上
+                dfs(i-1,j,board);
+                //向下
+                dfs(i+1,j,board);
+                //向左
+                dfs(i,j-1,board);
+                //向右
+                dfs(i,j+1,board);
             }
         }
-
     }
 
 }

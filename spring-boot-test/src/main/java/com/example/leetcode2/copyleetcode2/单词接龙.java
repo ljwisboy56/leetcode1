@@ -12,7 +12,6 @@ import java.util.Queue;
 public class 单词接龙 {
 
     public int ladderLength(String beginWord, String endWord, List<String> wordList) {
-
         Queue<String> queue =  new LinkedList<>();
         HashSet<String> set = new HashSet<>();
         queue.add(beginWord);
@@ -30,9 +29,10 @@ public class 单词接龙 {
                     if (check(cur, s)) {
                         if (s.equals(endWord)) {
                             return layer;
+                        }else {
+                            set.add(s);
+                            queue.add(s);
                         }
-                        set.add(s);
-                        queue.add(s);
                     }
                 }
             }

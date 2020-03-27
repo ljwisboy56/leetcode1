@@ -34,7 +34,7 @@ public class 不同的子序列 {
         }
 
         if("".equals(s) || "".equals(t)){
-            return 1;
+            return 0;
         }
 
         int[][] dp = new int[t.length()+1][s.length()+1];

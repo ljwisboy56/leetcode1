@@ -19,19 +19,20 @@ public class 最长连续序列 {
 
     public int longestConsecutive(int[] nums) {
 
-        if(nums == null || nums.length == 0){
-            return 0;
-        }
-
-        TreeSet<Integer> treeSet = new TreeSet<>();
-        for(int tmp : nums){
-            treeSet.add(tmp);
-        }
-
-        int i =0;
-        for (Integer integer : treeSet){
-            nums[i++] = integer;
-        }
+//        if(nums == null || nums.length == 0){
+//            return 0;
+//        }
+//
+//        TreeSet<Integer> treeSet = new TreeSet<>();
+//        for(int tmp : nums){
+//            treeSet.add(tmp);
+//        }
+//
+//        int i =0;
+//        for (Integer integer : treeSet){
+//            nums[i++] = integer;
+//        }
+        radixSort(nums);
 
         return find(nums);
 
