@@ -14,5 +14,9 @@ public class 第153题寻找旋转排序数组中的最小值 {
         return 1;
 
     }
+    //加版本4加入这行diamante
+    public void doss(){
+
+    }
 
 }
