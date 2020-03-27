@@ -8,8 +8,8 @@ public class 第153题寻找旋转排序数组中的最小值 {
 
     public int findMin(int[] nums) {
 
-        //版本3加入这行代码
-        System.out.println(3);
+        //版本2加入这行代码
+        System.out.println(2);
 
         return 1;
 
