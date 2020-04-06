@@ -8,12 +8,8 @@ public class 十进制转二进制 {
 
     public static void main(String[] args) {
 
-        int res= 1;
+        System.out.println(binaryToDecimal(4));
 
-        for (int i =0;i < 5;i++){
-            res <<= 1;
-            System.out.println(res);
-        }
 
     }
 
@@ -24,15 +20,14 @@ public class 十进制转二进制 {
      */
     public static String binaryToDecimal(int n) {
         int res = 0;
-        for (int i = n, step = 1; i > 0;i /= 2, step *= 10) {
-            res += i % 2 * step;
-
+        StringBuilder stringBuilder = new StringBuilder();
+        for (int i = n;i > 0;i /= 2) {
+            stringBuilder.append(i % 2);
         }
-        return String.valueOf(res);
+        return stringBuilder.reverse().toString();
     }
 
     public static String binaryToDecima2(int n) {
-        int res = 0;
         StringBuilder stringBuilder = new StringBuilder();
         for (int i = 31;i >= 0;i--) {
             stringBuilder.append(n >>> i & 1);

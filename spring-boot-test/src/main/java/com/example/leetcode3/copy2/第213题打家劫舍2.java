@@ -1,18 +1,13 @@
-package com.example.leetcode3.copyleetcode3;
+package com.example.leetcode3.copy2;
 
 /**
  * @author yingru.ljw
- * @date 2020-03-02 21:48
+ * @date 2020-03-30 19:31
  */
-public class 打家劫舍2 {
+public class 第213题打家劫舍2 {
 
-    /**
-     * 分2种情况讨论：第一种是取第一个不取最后一个，第二种是取最后一个不取第一个。
-     * @param nums
-     * @return
-     */
+
     public int rob(int[] nums) {
-
         int n = nums.length;
         if (n == 0) return 0;
         if (n == 1) return nums[0];

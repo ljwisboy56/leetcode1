@@ -48,7 +48,6 @@ public class 相隔为1的编辑距离 {
             }
         }
 
-        int res = dp[m][n];
         return dp[m][n] == 1;
     }
 

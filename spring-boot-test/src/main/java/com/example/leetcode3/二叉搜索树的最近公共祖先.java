@@ -12,9 +12,7 @@ public class 二叉搜索树的最近公共祖先 {
     public TreeNode lowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q) {
 
         int pval = p.val;
-
         int qval = q.val;
-
         int parent = root.val;
 
         if(pval > parent && qval > parent){
@@ -24,7 +22,6 @@ public class 二叉搜索树的最近公共祖先 {
         }else {
             return root;
         }
-
     }
 
 }

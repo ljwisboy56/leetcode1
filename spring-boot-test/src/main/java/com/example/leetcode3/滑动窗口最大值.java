@@ -21,6 +21,12 @@ public class 滑动窗口最大值 {
         }
 
         PriorityQueue<Integer> priorityQueue = new PriorityQueue<>((o1, o2) -> o2-o1);
+        PriorityQueue<Integer> priorityQueue2 = new PriorityQueue<>(new Comparator<Integer>() {
+            @Override
+            public int compare(Integer o1, Integer o2) {
+                return o2-o1;
+            }
+        });
 
         for (int i = 0; i < k; i++) {
             priorityQueue.add(nums[i]);

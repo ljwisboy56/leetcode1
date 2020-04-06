@@ -10,46 +10,27 @@ import java.util.stream.Collectors;
 public class 最大数 {
 
     public static void main(String[] args) {
-        int[] nums = {0,9,8,7,6,5,4,3,2,1};
-//        String res = new 最大数().largestNumber(nums);
-//        System.out.println(res);
-
-        String[] asStrs = new String[nums.length];
-        for (int i = 0; i < nums.length; i++) {
-            asStrs[i] = String.valueOf(nums[i]);
-        }
-        Arrays.sort(asStrs, Comparator.reverseOrder());
-
-        System.out.println(Arrays.toString(asStrs));
-
-
+        int[] nums = {1,9,8,7,6,5,4,3,2,1};
+        String res = new 最大数().largestNumber(nums);
+        System.out.println(res);
     }
 
 
     public String largestNumber(int[] nums) {
-        // Get input integers as strings.
         String[] asStrs = new String[nums.length];
         for (int i = 0; i < nums.length; i++) {
             asStrs[i] = String.valueOf(nums[i]);
         }
-
-        // Sort strings according to custom comparator.
         Arrays.sort(asStrs, (a, b) -> (b + a).compareTo(a + b));
-
-
-        // If, after being sorted, the largest number is `0`, the entire number
-        // is zero.
         if (asStrs[0].equals("0")) {
             return "0";
         }
-
-        // Build largest number from sorted array.
-        String largestNumberStr = new String();
+        StringBuilder largestNumberStr = new StringBuilder();
         for (String numAsStr : asStrs) {
-            largestNumberStr += numAsStr;
+            largestNumberStr.append(numAsStr);
         }
 
-        return largestNumberStr;
+        return largestNumberStr.toString();
     }
 
 
