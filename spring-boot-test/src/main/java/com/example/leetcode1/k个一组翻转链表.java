@@ -9,6 +9,7 @@ import com.example.letcodeeasy.ListNode;
 public class k个一组翻转链表 {
 
     public static void main(String[] args) {
+
         ListNode l1 = new ListNode(1);
         ListNode l2 = new ListNode(2);
         ListNode l3 = new ListNode(3);
@@ -40,7 +41,7 @@ public class k个一组翻转链表 {
         this.target = k;
 
         ListNode dummy = new ListNode(-1);
-
+        //
         doReverseGroup(dummy,head);
 
         return dummy.next;
@@ -122,8 +123,7 @@ public class k个一组翻转链表 {
     private ListNode reverseListNode(ListNode head){
 
         ListNode pre = null;
-        ListNode next = null;
-
+        ListNode next;
         ListNode cur = head;
 
         while (cur != null){

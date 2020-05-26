@@ -8,7 +8,16 @@ import com.example.letcodeeasy.ListNode;
  */
 public class 两数相加 {
 
+
+    public static void main(String[] args) {
+
+        new 两数相加().addTwoNumbers(null,null);
+        new 两数相加().reverseListNoe(null);
+
+    }
+
     public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
+
 
         if(l1 == null && l2 == null){
             return null;

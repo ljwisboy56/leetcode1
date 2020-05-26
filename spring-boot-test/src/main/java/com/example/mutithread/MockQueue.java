@@ -1,7 +1,6 @@
 package com.example.mutithread;
 
 import java.util.Objects;
-import java.util.concurrent.ArrayBlockingQueue;
 import java.util.concurrent.locks.Condition;
 import java.util.concurrent.locks.ReentrantLock;
 
@@ -11,7 +10,7 @@ import java.util.concurrent.locks.ReentrantLock;
  */
 public class MockQueue {
 
-    private int size;
+    private final int size;
 
     Object[] objects;
 
@@ -33,13 +32,13 @@ public class MockQueue {
         this.reentrantLock = new ReentrantLock();
         notEmpty = reentrantLock.newCondition();
         notFull = reentrantLock.newCondition();
-        ArrayBlockingQueue arrayBlockingQueue = new ArrayBlockingQueue(size);
-        try {
-            arrayBlockingQueue.put("a");
-            arrayBlockingQueue.take();
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
+//        ArrayBlockingQueue arrayBlockingQueue = new ArrayBlockingQueue(size);
+//        try {
+//            arrayBlockingQueue.put("a");
+//            arrayBlockingQueue.take();
+//        } catch (InterruptedException e) {
+//            e.printStackTrace();
+//        }
     }
 
 
@@ -47,8 +46,8 @@ public class MockQueue {
         if(Objects.isNull(obj)){
             throw new NullPointerException();
         }
-        reentrantLock.lock();
         try {
+            reentrantLock.lock();
             while (count == objects.length){
                 notFull.await();
             }
@@ -60,8 +59,7 @@ public class MockQueue {
     }
 
     private void addQueue(Object obj) {
-        objects[putIndex] = obj;
-        ++putIndex;
+        objects[putIndex++] = obj;
         if(putIndex >= size){
             putIndex = 0;
         }
@@ -70,8 +68,8 @@ public class MockQueue {
     }
 
     public Object get() throws InterruptedException {
-        reentrantLock.lock();
         try {
+            reentrantLock.lock();
             while (count == 0){
                 notEmpty.await();
             }

@@ -1,7 +1,5 @@
 package com.example.排序;
 
-import com.example.leetcode1.leetcodecopy1.颜色分类;
-
 /**
  * @author yingru.ljw
  * @date 2020-02-04 18:24

@@ -8,7 +8,7 @@ public class x的平方根 {
 
     public static void main(String[] args) {
 
-
+        System.out.println("1");
         int res = new x的平方根().mySqrt(2147395600);
         System.out.println(res);
 
